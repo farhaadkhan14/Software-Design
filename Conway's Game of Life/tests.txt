@@ -1,0 +1,35 @@
+x canary test
+x a dead cell with zero neighbors stays dead
+x a dead cell with one neighbors stays dead
+x a dead cell with two neighbors stays dead
+x a dead cell with five neighbors stays dead
+x a dead cell with eight neighbors stays dead
+X a live cell with one live neighbors dies
+X a live cell with four live neighbors dies
+X a live cell with eight live neighbors dies
+X a live cell with two live neighbors lives
+X a live cell with three live neighbors lives
+X a dead cell with three lives neighbors comes to life
+x given a live cell at position 3, 3, it generates eight signals for positions
+ (2, 2), (2, 3), (2, 4)...
+x given a live cell at positions 2, 4...
+x given a live cell at position 0, 0 (this is an infinite universe, we have to decide what happens at 0, 0)
+X given no position, generateSignalsForPositions returns an empty list
+X given one position, generateSignalsForPositions returns eight positions
+X given two positions, generateSignalsForPositions returns sixteen positions
+X given three positions, generateSignalsForPositions returns twenty four positions
+X given no positions, countSignals returns an empty Map
+X given one positions, countSignals returns a Map with that position as key and value 1
+X given two of the same positions, countSignals returns a Map with that positions as key and value 2
+X given three positions, first and the third being the same, countSignals returns a Map with two keys. The value for one is 1 and the value for the other is 2
+X given no positions, nextGeneration returns an empty list
+X given one position, nextGeneration returns an empty list
+X given positions (2, 3) and (2, 4), nextGeneration returns an empty list
+X given positions (1, 1), (1, 2), and (3, 0), nextGeneration returns a list with one position (2, 1)
+X given positions (1, 1), (1, 2), and (2, 2), nextGeneration returns a list with positions (1, 1), (1, 2), (2, 1), (2, 2)
+X URL: https://en.wikipedia.org/wiki/Conway%27s_Game_of_Life
+X given Block, nextGeneration returns the same block
+X given Beehive, nextGeneration returns the same Beehive
+X given horizontal blinker, nextGeneration returns vertical blinker
+X given vertical blinker, nextGeneration returns horizontal blinker
+X given glider with one live cell on the top, nextGeneration returns proper result with that cell moving to the right 

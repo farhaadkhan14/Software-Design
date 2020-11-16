@@ -1,0 +1,99 @@
+Assign4: Due 11:59PM November 8
+
+The Fibonacci series of numbers start with 1, 1, 2, 3, 5, 8, 13, 21, ...
+where values at position 0 and 1 are 1, and values at each position after
+that are a sum of values at the previous two positions.
+
+Write four implementations of a function to compute the Fibonacci number at a given position.
+
+Please start with one implementation at a time rather than rushing through all
+of them at the same time.
+
+The four implementations are described below:
+
+1. An imperative iteration. 
+  Given a position n, loop through totaling values until you reach the value for the given position.
+
+2. A functional iteration. 
+	  Given a position n, loop through totaling values until you reach the value for the given position. Avoid explicit mutability.
+
+3. A simple recursion.
+  Given a position, compute the value at a position using the expression fib(n-1) + fib(n-2).
+
+4. A memoized recursion.
+  Given a position, look up to see if the value has been precomputed and if so return that value. Otherwise, use recursion to compute the value.
+  
+Confirms that the memoized version is faster than the recursive version.
+
+Reuse as much code as possible.
+
+Please bring forward the practices, techniques, and tools you have learned so far. This includes: 
+Good code quality
+Lightweight design
+Minimum code
+Automated testing                                                         
+Code coverage
+Continuous integration
+
+Once you complete coding, please answer the following:
+
+1. What design principles did you use in this assignment? Discuss.
+
+We followed the DRY principle, where we created an interface with a default method called assertPosition that was used by all the classes. 
+We also had an abstract method computeFibonacci that had to be implemented by other classes. DRY was also used when we inherited MemoizedRecursion 
+from SimpleRecursion and called super on computeFibonacci.
+
+We followed the OCP principle, where we had an abstract interface with the method computeFibonacci that would be implemented by the subclasses, 
+where you could extend in the sense that you could have different implementations of computing a fibonacci, but you couldn't modify the 
+existing abstract function. 
+
+A combination of OCP and DRY was also applied to our test classes, where each test subclass would return an instance of the subclass for testing. 
+This was programmatically efficient because we were testing for the same output from all these implementations of computeFibonacci. We did not
+have to change our our test file to apply to new implementations, and wrote less code.
+
+We also applied the DIP because we had low level classes depend on a high level interface, such as FunctionalIteration depending on Fibonacci, and
+FunctionInterfaceTest depending on FibonacciTest, etc. Also, the computeFibonacci functions in each of the fibonacci implementations depended on an abstraction
+in Fibonacci.java. Throughout our program, subclasses relied on an abstract interface and not a concrete class. This made our code more stable and less rigid.
+
+We used the SRP to categorize different fibonacci implementations, and this helped us make our code more extensible and easier to test. We were able
+to extend MemoizedRecursion from SimpleRecursion and also able to create separate instances to test efficiently. 
+
+We also used SLAP when we applied super.computeFibonacci within MemoizedRecursion. We wrote fewer lines of code since they were already written and
+added a single level of abstraction when we called super.computeFibonacci.
+
+2. Any surprises or things that you did not expect?
+
+One of our surprises was how in java, an inherited class that overrides the method of the base class, can also call the method of overridden base 
+class with the super keyword. 
+
+Also, with our test classes, we learned that with java you could create a function that returns an instance of an object and use the functions of 
+that object. This greatly helped us in abiding by the DRY and OCP principles as it allows us to define any number of subclasses that implements the 
+base interface class.
+
+We realized that our code is not set in stone from the start. If we have to change a certain piece of code from an interface to a class, it is okay
+to do so, as long as we're changing it to apply towards a good design pattern or principle.
+
+3. What design patterns did you use in this assignment? Discuss.
+
+We used a hybrid of the Abstract Factory Design pattern and the Factory method, as we created a factory interface with a factory method per class, 
+and each concrete class in our program provided a different implementation of the computeFibonacci function. 
+
+We applied the Factory method when we used createFibonacci in FibonaccaTest.java to create instances of the different subclasses without 
+specifying which instance we needed. CreateFibonacci returned the instance that responded to the subclass that called it and Fibonacci.test used
+that instance to apply the test cases.
+
+We used the Composed Method pattern by having a single level of abstraction when using super.computerFibonacci in MemoizedRecurison.
+
+Total [100]: 90
+All tests pass [10]:
+Test quality [10]:
+Code Coverage [10]:        
+Functional solution [10]:
+Memoized solution and reuse [20]:
+Design quality [10]:
+Code quality [10]:
+Performance test [10]: -10
+Missing
+
+Response to questions [10]:
+There is no hybrid of the patterns in use.

@@ -1,0 +1,47 @@
+Assign1: Due 11:59PM September 20
+
+***Your chance of success greatly increases if you start very early. Your chance of failure increases if you start late.
+
+Using Test First Development (no code without test first) implement the problem you designed in hw2. Feel free to evolve that design and use your judgment to make changes based on the improved understanding and learning.
+
+Take small steps, ask for frequent reviews.
+
+First start with a tests list (check in a tests.txt file) and a canary test. Implement at most two other tests, in addition to the canary test, and minimum code to make those tests to pass. This is a great first step to complete and ask for a review.
+
+After completing the assignment (and only after) answer the following questions:
+
+1. What did you learn mainly in this assignment?
+We found that Test Driven Development is a very helpful strategy for designing and writing out our code. It encourages us to take small steps at a time, as well as encourage modular design and made us feel more confident in our code and in its reliability. We also learned that there are java libraries
+which we can use to our advantage in writing more concise and cleaner code.
+
+2. How is your current design different, if at all, from the strategic design created in hw2?
+
+In our original design, we really complicated things by creating multiple classes(eg. a cell class with various attributes such as coordinates, and number of neighbors) which was very unnecessary. 
+
+3. Were there any surprises or things you did not expect along the way? Any 
+particular problem faced, things you had to tackle that you did not expect 
+beforehand?
+
+We had the initial impression that it's better to start working on the GUI of your program and were suprised to find otherwise. Interestingly, we also found that the most difficult part of our program was not writing out the backend logic but the GUI! Java makes simple 2D graphics like a grid layout for our game unnecessarily difficult in our experience. We had to implement more preset libraries rather than create manually data structures, which had a 
+learning curve to it eg. we thought that it was necessary to create a matrix for the underlying program logic, but we learned that was not necessary and we could use Java classes like Point with the List data structure. 
+
+Total [100]: 82
+Build runs the tests without errors [10]:
+Program produces reasonably desired results when run [10]:
+All tests pass [20]:
+
+Code Coverage [10]: -2
+Coverage shows red.
+
+Test quality [10]:
+
+Design quality [20]: -10
+Poor separation of concerns. The GUI should be in a separate package.
+Unnecessary methods.
+Bloated code for nextGeneration
+
+Code quality [10]: -1
+Need to follow language conventions for naming classes.
+
+Answers to questions in assign1.txt [10]: -5
+Rather lacking in details, especially on parts 1 and 2.

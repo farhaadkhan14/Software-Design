@@ -1,0 +1,17 @@
+x canary test
+x 787402759 has good credit
+x 822581759 has bad credit with reason "poor credit score"
+x 574393383 doesn't have criminal record
+x 423312294 has criminal record with reason being "criminal record exists"
+x 423312295 is a citizen
+x 827591289 is not a citizen with reason being "not a citizen"
+x 534393387 has good employment history
+x 423312294 has bad employment history with reason "incorrect employment"
+x 773456677 is approved for credit, criminal, credit, employment
+x 070456670 is checked for all but fails citizen, credit, employment
+x 703456677 is checked for all but fails criminal
+x 773456677 is approved for criminal and citizen
+x background check with multiple criteria no failures
+x background check with multiple criteria one failure
+x background check with multiple criteria two failures
+x background check with multiple criteria three failures

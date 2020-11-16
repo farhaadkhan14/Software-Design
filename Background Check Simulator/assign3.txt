@@ -1,0 +1,97 @@
+Assign3: Due 11:59PM October 25
+
+An agency provides background check service. Given a candidate they can verify
+various things: credit, criminal records, employment verification, citizenship 
+check, etc. There may be more things they can verify in the future.
+
+To make things easy we will use social security number to represent a 
+candidate.
+
+Design a class library with the following:
+
+A candidate can be represented using the social security number, first name, 
+and last name.
+
+Provide facility to evaluate a candidate based on various criteria selected.
+
+The result of evaluation is either an approve or a disapprove. If it was a 
+disapprove, the reason(s) are provided. The result of evaluation should be
+candidate's full name, their social security number, and the result of the 
+evaluation, along with reasons for rejection.
+
+Design the library so that a user of the library can decide which criteria to
+use for evaluation. They can select one or more criteria. They can also 
+provide their own criteria beyond what the library provides.
+
+For each of the criteria (for example to check criminal records) we will 
+pretend that such code can be implemented by talking to a database or a web 
+service. For the purpose of this exercise we will generate a random response 
+in the code for the analysis of a criteria like criminal record.
+
+Let's focus on the following after the coding is completed:
+
+1. What design principles did we use in this assignment?
+
+We followed the Open-Closed Principle, which essentially states that functions, 
+classes, and other software modules should be extensible but at the same time,
+you aren't modifying the source code. We applied this in our evaluateCriteria 
+function. We could have had multiple functions that would evalaute different
+criteria such as a function for 3 criteria, a function for 2, and a function
+for 1. That would require programming a new function everytime there was a 
+new criteria. Our evaluateCriteria function allows multiple criterias, using varargs.
+
+We used the Don't Repeat Yourself principle when we followed the OCP. If we
+hadn't followed OCP then we would have redundant code that could be refactored 
+into one function that could take in varargs.
+
+We also followed the Single Responsibility Principle(SRP) where there was an
+interface for each background check type (eg. criminalCheck, citizenship 
+status, creditCheck, etc) so that we can separate concerns. Separating concerns 
+has helped us keep code clean and easier to maintain. When we had to change a 
+function or fix a bug, we didn't have to worry about disrupting the source code 
+of another function that dealt with a separate concern.
+
+We did not have to apply LSP or DIP because there was no inheritance or 
+polymorphism involved.
+
+
+2. What were some of the challenges you ran into when creating the program?
+
+We were confused by how we were supposed to return 2 primitive data types from 
+1 function, and that was easy to resolve as we used Pair from the jtuple library
+ that offers this functionality.
+
+We also found functional style programming to be difficult as it was a different
+ paradigm we were working with. In the end, we think that functional programming
+ can easier to read, and more efficient than imperative style programming.
+
+A more fundamental issue that we came across was how we were supposed to create 
+an interface that allows for the user to access these checks.
+
+Originally we created a "CheckAll" function that would call all these checks 
+from these interfaces, but this is a bad design, as that would be violating 
+OCP where we would constantly be making changes to the source code when 
+program requirements change.
+
+We initially thought of tackling this issue by creating a base class with an 
+evaluate function that is overridden by individual checks, but then we learned
+to use java's lambda function which let's us cast functions anywhere.
+
+
+3. Were there any surprises or unexpected learnings?
+
+We thought lambda, though a bit confusing, was incredibly useful in letting 
+us process functions from other interfaces in the same package. There was 
+also the stream function within java that let us do functional style programming,
+thus letting us create very concise and eloquent code.
+
+Total [100]:
+Code compiles with no errors [20]:
+All tests pass [10]:
+Test quality [20]:
+Code coverage [10]:
+Design quality [20]:
+Code quality[10]:
+Answers to questions [10]: -3
+Need to spellcheck           
+DIP was used predominantly in the design.

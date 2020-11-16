@@ -1,0 +1,20 @@
+x canary test
+x imperative iterative style returns 1 for position 0
+x imperative iterative style returns 1 for position 1
+x imperative iterative style returns 2 for position 2
+x imperative iterative style returns 8 for position 5
+
+x functional iterative style returns 1 for position 0
+x functional iterative style returns 1 for position 1
+x functional iterative style returns 2 for position 2
+x functional iterative style returns 8 for position 5
+
+x simple recursion style returns 1 for position 0
+x simple recursion style returns 1 for position 1
+x simple recursion style returns 2 for position 2
+x simple recursion style returns 8 for position 5
+
+x memoized recursion style returns 1 for position 0
+x memoized recursion style returns 1 for position 1
+x memoized recursion style returns 2 for position 2
+x memoized recursion style returns 8 for position 5
